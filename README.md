@@ -23,5 +23,6 @@ My Final Project code will grow further after the deadline to reach these milest
 - Quick&dirty start in Google Colab.
 - When the code stabilizes, create singularity container to share reproducible results with our collaborators and readers of the future papers.
 
-To Follow up:
+*To Follow up*
 Daniel Borshagovski: I couldn't find the code to run the human geneformer. The mouse version is nicely published on github, with code to perform in silico perturbations, which I am interested in: https://github.com/machine-perception-robotics-group/Mouse-Geneformer/blob/master/in_silico_perturbation.ipynb
+DS: Human example here https://chanzuckerberg.github.io/cellxgene-census/notebooks/analysis_demo/comp_bio_geneformer_prediction.html  found by searching Geneformer on https://cellxgene.cziscience.com/census-models
