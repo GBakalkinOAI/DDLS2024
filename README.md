@@ -23,6 +23,9 @@ My Final Project code will grow further after the deadline to reach these milest
 - Quick&dirty start in Google Colab.
 - When the code stabilizes, create singularity container to share reproducible results with our collaborators and readers of the future papers.
 
-*To Follow up*
+*To Follow Up*
 Daniel Borshagovski: I couldn't find the code to run the human geneformer. The mouse version is nicely published on github, with code to perform in silico perturbations, which I am interested in: https://github.com/machine-perception-robotics-group/Mouse-Geneformer/blob/master/in_silico_perturbation.ipynb
 DS: Human example here https://chanzuckerberg.github.io/cellxgene-census/notebooks/analysis_demo/comp_bio_geneformer_prediction.html  found by searching Geneformer on https://cellxgene.cziscience.com/census-models
+
+*To Follow Up*
+Matthias Zepper: Since all clinical studies for Medicinal Products need to be preregistered, there are international registries like those of the FDA (https://clinicaltrials.gov/). However, retrieving the information in a structured way is difficult, despite them using standardized ontology terms. (https://www.ebi.ac.uk/ols4/, https://www.ebi.ac.uk/spot/zooma/). With regard to mutations, predicting the effect is difficult as well. VEP (https://www.ensembl.org/info/docs/tools/vep/index.html) and Snpeff (http://pcingola.github.io/SnpEff/) come to my mind. For clinically validated and manually curated effects, check OMIM (https://www.omim.org/)
