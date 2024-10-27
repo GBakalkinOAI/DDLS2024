@@ -1,13 +1,13 @@
 # DDLS2024
 Final Project (by Daniil Sarkisyan) for the course https://ddls.aicell.io/course/ddls-2024
 
-_Working project's part_: Run these self-contained .ipynb in Google Colab in order listed
+__Working project's part:__ Run these self-contained .ipynb in Google Colab in order listed
 
 - `CellxGene_Census_scVI_Monocytes_read_08.ipynb`  - read metadata, filter cells, read scRNAseq and pre-trained embeddings
 
 - `CellxGene_Census_scVI_Monocytes_process_02.ipynb` - process ingested metadata
 
-_Failed to do_: Teach chatGPT about breaking API changes introduced since GPT-4o (o1-PREVIEW, o1-mini) knowledge cut-off
+__Failed to do:__ Teach chatGPT about breaking API changes introduced since GPT-4o (o1-PREVIEW, o1-mini) knowledge cut-off
 
 - Latest release (v.1.16.2) was downloaded from https://github.com/chanzuckerberg/cellxgene-census
 
@@ -25,11 +25,11 @@ _Failed to do_: Teach chatGPT about breaking API changes introduced since GPT-4o
   They both did not complain until I will ask to print the full tutorial - then they will both refuse the request, citing the response size limit set by OpenAI.
   Asking them to break response into parts and output each part failed (only the first part was OK, but they did not continue).
 
-- Investigation of OpenAI developer forum found a lot of developer struggling (and failing) with adding "custom knowledge" to chatGPT
+- `00_prompt_v03.txt` Investigation of OpenAI developer forum found a lot of developer struggling (and failing) with adding "custom knowledge" to chatGPT...
 
-- Although fine-tuning can feel like the more natural option — training on data is how GPT learned all of its other knowledge, after all — we generally do not recommend it as a way to teach the model knowledge. Fine-tuning is better suited to teaching specialized tasks or styles, and is less reliable for factual recall. (see https://github.com/openai/openai-cookbook/blob/main/examples/Question_answering_using_embeddings.ipynb)
+- https://github.com/openai/openai-cookbook/blob/main/examples/Question_answering_using_embeddings.ipynb from OpenAI wise advice: _Although fine-tuning can feel like the more natural option — training on data is how GPT learned all of its other knowledge, after all — we generally do not recommend it as a way to teach the model knowledge. Fine-tuning is better suited to teaching specialized tasks or styles, and is less reliable for factual recall._
 
-_Summarizes several years of my own ML failures all too well_
+__Summarizes several years of my own ML failures all too well__
 
 - `bitter_lesson.pdf` - I wish I would learn it sooner
 
