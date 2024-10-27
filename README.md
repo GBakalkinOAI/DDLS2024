@@ -1,15 +1,37 @@
 # DDLS2024
 Final Project (by Daniil Sarkisyan) for the course https://ddls.aicell.io/course/ddls-2024
 
-- CellxGene_Census_scVI_Monocytes_read_08.ipynb  - read metadata, filter cells, read scRNAseq and pre-trained embeddings
+_Working project's part_: Run these self-contained .ipynb in Google Colab in order listed
 
-- CellxGene_Census_scVI_Monocytes_process_02.ipynb - process ingested metadata
+- `CellxGene_Census_scVI_Monocytes_read_08.ipynb`  - read metadata, filter cells, read scRNAseq and pre-trained embeddings
 
-- get_ipynb_py_md.sh - convert .ipynb into .py, copy files into flat folder, drop identical files (usually caused by following links)
+- `CellxGene_Census_scVI_Monocytes_process_02.ipynb` - process ingested metadata
 
-- combine_py_md.sh - combine .md and .py tutorials to obey 10 files limit of chatGPT
+_Failed to do_: Teach chatGPT about breaking API changes introduced since GPT-4o (o1-PREVIEW, o1-mini) knowledge cut-off
 
-- bitter_lesson.pdf - this summarize my own ML failures so well, I wish I would learn it sooner
+- Latest release (v.1.16.2) was downloaded from https://github.com/chanzuckerberg/cellxgene-census
+
+- `get_ipynb_py_md.sh` - converted .ipynb into .py, copied files into flat folder (see `cellxgene-census-1.16.2-inject-tutorials-as-py`), dropping identical files caused by links
+
+- `combine_py_md.sh` - combine .md and .py tutorials to obey 10 files limit of chatGPT (see `cellxgene-census-1.16.2-attach-tutorials-to-chat`)
+
+- Attaching `CELLxGENE_Census_combined.md` and `CELLxGENE_Census_combined.py` to chat did not stop chatGPT from using obsolete API syntax and functions
+
+- `00_prompt_v01.txt` I asked o1-PREVIEW to syntesize plain-text API tutorial, to be injected into future prompts, by ingesting separate CELLxGENE documentation.
+  Will probably work in the future, with bigger context windows and higher usage limits available.
+  For now I would either run out of usage allowance, or GPT-o1-PREVIEW will take longer and longer to answer until it will fail
+
+- `00_prompt_v02.txt` I tried both o1-PREVIEW and o1-mini (supposedly better at coding) to synthesize tutorial "inside", responding with just a summary of changes they had to make.
+  They both did not complain until I will ask to print the full tutorial - then they will both refuse the request, citing the response size limit set by OpenAI.
+  Asking them to break response into parts and output each part failed (only the first part was OK, but they did not continue).
+
+- Investigation of OpenAI developer forum found a lot of developer struggling (and failing) with adding "custom knowledge" to chatGPT
+
+- Although fine-tuning can feel like the more natural option — training on data is how GPT learned all of its other knowledge, after all — we generally do not recommend it as a way to teach the model knowledge. Fine-tuning is better suited to teaching specialized tasks or styles, and is less reliable for factual recall. (see https://github.com/openai/openai-cookbook/blob/main/examples/Question_answering_using_embeddings.ipynb)
+
+_Summarizes several years of my own ML failures all too well_
+
+- `bitter_lesson.pdf` - I wish I would learn it sooner
 
 
 I am not good at navigating commits / switching branches / temporarily returning to old stages, so it is easier for me to write _v01, _v02, etc. in case I will need to borrow code from the earlier version to the latest one.
