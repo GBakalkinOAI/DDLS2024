@@ -1,0 +1,141 @@
+Error and rate constrains:
+  - first 15 files went great (saved 13_super-tutorial_01-12-with-o1-PREVIEW.md along the way)
+  - with growing super-tutorial size the o1-PREVIEW reply speed visibly slower but integrated 20 files (28_super-tutorial_01-27-with-o1-PREVIEW.md is the last successful step)
+  - while integrating 21st file it complained of some output error and cut the size of super-tutorial it was creating from 1667 lines to 600+ lines
+  - see https://chatgpt.com/share/67165903-5210-8001-8418-84651916352f
+  - I run out of "o1-PREVIEW responses" and had to wait 2 days (I am on Plus plan).
+
+Prompt:
+
+I am a PhD-level bioinformatician at Uppsala University.
+Usually I process scRNA-seq data with R/Bioconductor and Seurat.
+We do life science research and it is very important that I can make use of the huge scRNA-seq dataset and pre-trained embeddings produced by CELLxGENE Census project. For this I very much need a good tutorial for their latest python API.
+
+CELLxGENE Census went through several API upgrades, with incompatible changes between them. The API release I need to target is just two weeks old.
+Because of chatGPT's knowledge cutoff, in my previous chats I found that chatGPT often wrote codes for obsolete CELLxGENE Census API versions.
+
+To remedy this I need you to synthesize non-repetitive, coherent, clear and comprehensive super-tutorial for the latest CELLxGENE Census python API by combining several files that I will be pasting as my next prompts.
+
+These files were taken from the public GitHub repository "https://github.com/chanzuckerberg/cellxgene-census" and they are the most authoritative source for the latest release v1.16.2 of their python API. Unfortunately, these files are also too wordy with the same tasks often described repeatedly across different files.
+
+For super-tutorial we need to re-order these tasks to minimize "forward references", i.e. when the text has to refer to the things not described yet.
+When several examples are available for solving the same task, you should prefer the more recent examples over older one.
+When dates are mentioned, say one example use 2024-07-01 Census version and the other one use 2023-12-15, the newer 2024-07-01 example should be preferred.
+If an older example does more and its function calls do not contradict the newer example, you should combine all similar examples into one comprehensive example.
+Please prioritize code and explanations using the most recent date - they are more likely to describe the latest (non-obsolete) API.
+
+Please design and output the super-tutorial as plain text that I can paste as my first prompt to start the future Census API-related chats, so that
+when I ask you to code in my next prompts you will write code for the LATEST Census API, disregarding the obsolete API versions that went into your pre-training data.
+
+When I prompt you with a single word "Print", print just the plain-text super-tutorial and nothing else.
+
+I will be pasting .md tutorials, .py example notebooks which I converted from .ipynb files, and .py sources for the API functions.
+These files are just two weeks old and they may be raw and out of order, so expect that you will need to restructure and polish the super-tutorial after processing each of these files.
+If my prompt is different from a single word "Print", there is no need to print full super-tutorial during your answer, it is enough to summarize the changes plus, at the end of your answer, you can print a list of already processed files just to remind me what was already processed.
+
+If something is unclear, please ask me.
+If the task is clear, tell me how you understood it and finish your answer by saying "Please paste the file to add to the super-tutorial".
+
+Here are some extra hits:
+
+Super-tutorial should include all these examples:
+----
+Learn how to stream the single-cell data and metadata from Census into your machine.
+    cellxgene_census_docsite_quick_start.md
+    notebooks/api_demo/census_query_extract.ipynb
+    notebooks/api_demo/census_citation_generation.ipynb
+    notebooks/api_demo/census_gget_demo.ipynb
+
+Tutorials that show you how to retrieve pre-calculated Census embeddings and use their associated models for your workflows.
+
+Access Census embeddings.
+    notebooks/api_demo/census_access_maintained_embeddings.ipynb
+    notebooks/api_demo/census_embedding.ipynb
+    notebooks/api_demo/census_embedding_search.ipynb
+
+Use the Census trained models.
+    notebooks/analysis_demo/comp_bio_scvi_model_use.ipynb
+    notebooks/analysis_demo/comp_bio_geneformer_prediction.ipynb
+
+Exploring human biology with Census embeddings.
+    notebooks/analysis_demo/comp_bio_embedding_exploration.ipynb
+
+Gain a better understanding on the nature of the Census data and how it's organized.
+    notebooks/api_demo/census_duplicated_cells.ipynb
+    notebooks/analysis_demo/comp_bio_census_info.ipynb
+    notebooks/api_demo/census_and_cell_guide_example.ipynb
+    notebooks/analysis_demo/comp_bio_explore_and_load_lung_data.ipynb
+    notebooks/api_demo/census_datasets.ipynb
+    notebooks/api_demo/census_dataset_presence.ipynb
+    notebooks/api_demo/census_summary_cell_counts.ipynb
+
+A few examples of relevant analysis pipelines with Census data.
+    notebooks/analysis_demo/comp_bio_summarize_axis_query.ipynb
+    notebooks/analysis_demo/comp_bio_data_integration_scvi.ipynb
+    notebooks/analysis_demo/comp_bio_normalizing_full_gene_sequencing.ipynb
+
+Demonstrations of memory-efficient compute workflows that leverage the streaming capabilities of Census.
+    notebooks/experimental/highly_variable_genes.ipynb
+    notebooks/experimental/mean_variance.ipynb
+    notebooks/api_demo/census_compute_over_X.ipynb
+
+Learn about features to do data modeling directly from Census into machine learning toolkits.
+    notebooks/experimental/pytorch.ipynb
+----
+
+Super-tutorial should include at least these python API functions:
+----
+Open/retrieve Cell Census data
+    cellxgene_census.open_soma
+    cellxgene_census.get_default_soma_context
+    cellxgene_census.get_source_h5ad_uri
+    cellxgene_census.download_source_h5ad
+
+Get slice as AnnData
+    cellxgene_census.get_anndata
+    cellxgene_census.get_obs
+    cellxgene_census.get_var
+
+Feature presence matrix
+    cellxgene_census.get_presence_matrix
+
+Versioning of Cell Census builds
+    cellxgene_census.get_census_version_description
+    cellxgene_census.get_census_version_directory
+
+Experimental: Machine Learning
+    cellxgene_census.experimental.ml.pytorch.experiment_dataloader
+    cellxgene_census.experimental.ml.pytorch.ExperimentDataPipe
+    cellxgene_census.experimental.ml.pytorch.Stats
+    cellxgene_census.experimental.ml.encoders.Encoder
+    cellxgene_census.experimental.ml.encoders.LabelEncoder
+    cellxgene_census.experimental.ml.encoders.BatchEncoder
+    cellxgene_census.experimental.ml.huggingface.CellDatasetBuilder
+    cellxgene_census.experimental.ml.huggingface.GeneformerTokenizer
+
+Experimental: Processing
+    cellxgene_census.experimental.pp.get_highly_variable_genes
+    cellxgene_census.experimental.pp.highly_variable_genes
+    cellxgene_census.experimental.pp.mean_variance
+
+Experimental: Embeddings
+    cellxgene_census.experimental.get_embedding
+    cellxgene_census.experimental.get_embedding_metadata
+    cellxgene_census.experimental.get_embedding_metadata_by_name
+    cellxgene_census.experimental.get_all_available_embeddings
+    cellxgene_census.experimental.get_all_census_versions_with_embedding
+----
+
+CELLxGENE Census API uses the following packages and here are the recommended URL of their documentation:
+----
+    tiledbsoma-py: https://tiledbsoma.readthedocs.io/en/
+    python: https://docs.python.org/3
+    numpy: http://docs.scipy.org/doc/numpy
+    scipy: http://docs.scipy.org/doc/scipy/reference
+    anndata: https://anndata.readthedocs.io/en/latest/
+    pandas: https://pandas.pydata.org/docs/
+    scanpy: https://scanpy.readthedocs.io/en/stable/
+    torch: https://pytorch.org/docs/stable/
+    torchdata: https://pytorch.org/data/beta/
+    sklearn: http://scikit-learn.org/stable'
+----

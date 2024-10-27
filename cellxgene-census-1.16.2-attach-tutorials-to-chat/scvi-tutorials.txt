@@ -1,0 +1,79 @@
+I am bioinformatician and I usually use R/Bioconductor and Seurat to analyze scRNA-seq data.
+
+I have downloaded AnnData for Monocyte-like cell types from CELLxGENE Census and somewhat analysed it (see attached .ipynb file).
+
+Please do the following:
+- Extract python code from attached .ipynb file into Canvas
+- Locate and fix the bugs in this code
+- Compute gene expression percentage for all Y chromosome genes
+- Perform Differential Expression analysis between cell types using the pre-trained scVI model
+- Perform Differential Expression analysis between cell types using the pre-trained Geneformer model
+
+Please add comments before python commands with detailed explanations, suitable for novice Python programmer, using the following tutorials as references:
+
+CELLxGENE Census Tutorials
+- Quick start: https://chanzuckerberg.github.io/cellxgene-census/quickstart.html
+- Querying and fetching the single-cell data and cell/gene metadata: https://chanzuckerberg.github.io/cellxgene-census/fetching_data.html
+- Generating citations for Census slices: https://chanzuckerberg.github.io/cellxgene-census/generating_citations.html
+- Querying data using the gget cellxgene module: https://chanzuckerberg.github.io/cellxgene-census/gget_module.html
+- Access CELLxGENE collaboration embeddings (scVI, Geneformer): https://chanzuckerberg.github.io/cellxgene-census/collab_embeddings.html
+- Access CELLxGENE-hosted embeddings: https://chanzuckerberg.github.io/cellxgene-census/hosted_embeddings.html
+- Find similar cells with embeddings vector search: https://chanzuckerberg.github.io/cellxgene-census/embeddings_vector_search.html
+- scVI for cell type prediction: https://chanzuckerberg.github.io/cellxgene-census/scvi_type_prediction.html
+- scVI for cell type prediction and data projection: https://chanzuckerberg.github.io/cellxgene-census/notebooks/analysis_demo/comp_bio_scvi_model_use.html
+- Geneformer for cell class prediction: https://chanzuckerberg.github.io/cellxgene-census/geneformer_prediction.html
+- Geneformer for cell class prediction and data projection: https://chanzuckerberg.github.io/cellxgene-census/notebooks/analysis_demo/comp_bio_geneformer_prediction.html
+- Exploring biologically relevant clusters: https://chanzuckerberg.github.io/cellxgene-census/biological_clusters.html
+- Understanding and filtering out duplicate cells: https://chanzuckerberg.github.io/cellxgene-census/duplicate_cells.html
+- Exploring all data from a tissue: https://chanzuckerberg.github.io/cellxgene-census/tissue_data.html
+- Summarizing cell and gene metadata: https://chanzuckerberg.github.io/cellxgene-census/metadata_summarization.html
+- Integrating multi-dataset slices: https://chanzuckerberg.github.io/cellxgene-census/multidataset_integration.html
+- Experimental Highly Variable Genes API: https://chanzuckerberg.github.io/cellxgene-census/hvg_api.html
+- Training a PyTorch Model: https://chanzuckerberg.github.io/cellxgene-census/pytorch_model_training.html
+
+scVI Tutorials
+- Installation: https://docs.scvi-tools.org/en/stable/installation.html
+- Introduction to scvi-tools: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Introduction.html
+- Data loading and preparation: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Data_loading.html
+- Using Python in R with reticulate: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Using_Python_in_R.html
+- Atlas-level integration of lung data: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Atlas-level_integration.html
+- Integrating datasets with scVI in R: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scVI_integration_R.html
+- Integration and label transfer with Tabula Muris: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Integration_Tabula_Muris.html
+- Reference mapping with scvi-tools: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Reference_mapping.html
+- Querying the Human Lung Cell Atlas: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Human_Lung_Atlas_query.html
+- Seed labeling with scANVI: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scANVI_seed_labeling.html
+- Linearly decoded VAE: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Linearly_decoded_VAE.html
+- Identification of zero-inflated genes: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Zero_inflation.html
+- Annotation with CellAssign: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Annotation_CellAssign.html
+- Topic Modeling with Amortized LDA: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Amortized_LDA.html
+- Differential expression on C. elegans data: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/C_elegans_DE.html
+- Isolating perturbation-induced variations with contrastiveVI: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/ContrastiveVI.html
+- Benchmarking the scANVI fix: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scANVI_fix.html
+- MrVI Quick Start Tutorial: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/MrVI_quickstart.html
+- Preprocessing and model fitting: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Preprocessing.html
+- Visualize cell embeddings and sample distances: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Visualize_embeddings.html
+- Differential expression and differential abundance analysis: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Differential_expression_abundance.html
+- PeakVI: Analyzing scATACseq data: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/PeakVI.html
+- ATAC-seq analysis in R: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/ATAC-seq_analysis_R.html
+- ScBasset: Analyzing scATACseq data: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scBasset_analysis.html
+- scBasset: Batch correction of scATACseq data: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scBasset_batch_correction.html
+- PoissonVI: Analyzing quantitative scATAC-seq fragment counts: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/PoissonVI.html
+- CITE-seq analysis with totalVI: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/totalVI_CITE-seq.html
+- Integration of CITE-seq and scRNA-seq data: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/CITE-seq_integration.html
+- CITE-seq reference mapping with totalVI: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/totalVI_reference_mapping.html
+- CITE-seq analysis in R: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/CITE-seq_analysis_R.html
+- Joint analysis of paired and unpaired multiomic data with MultiVI: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/MultiVI.html
+- Multi-resolution deconvolution of spatial transcriptomics: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Multi-resolution_deconvolution.html
+- Multi-resolution deconvolution of spatial transcriptomics in R: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Multi-resolution_deconvolution_R.html
+- Introduction to gimVI: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/gimVI.html
+- Spatial mapping with Tangram: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Tangram.html
+- Stereoscope applied to left ventricule data: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Stereoscope_left_ventricule.html
+- Mapping human lymph node cell types to 10X Visium with Cell2location: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Cell2location_mapping.html
+- Use pretrained models of scVI-hub for CELLxGENE: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scVI_hub_CELLxGENE.html
+- Using scvi-hub to download pretrained scvi-tools models: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scVI_hub_download.html
+- Using scvi-hub to upload pretrained scvi-tools models: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scVI_hub_upload.html
+- Minification: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Minification.html
+- Model hyperparameter tuning with scVI: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Hyperparameter_tuning.html
+- Data handling in scvi-tools: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Data_handling.html
+- Constructing a probabilistic module: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Constructing_probabilistic_module.html
+- Constructing a high-level model: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/Constructing_high_level_model.html
